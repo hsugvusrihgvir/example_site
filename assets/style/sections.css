@@ -1,0 +1,311 @@
+﻿/* ===== ОБЩИЕ СЕКЦИИ ===== */
+
+.section {
+    padding-block: var(--section-padding-y);
+    background: var(--section-bg);
+}
+
+.section--light {
+    background: var(--section-bg-soft);
+}
+
+.section--accent {
+    background: var(--section-bg-accent);
+}
+
+.section--contacts {
+    background: var(--section-bg-soft);
+}
+
+.section__inner {
+    max-width: var(--layout-max-width);
+    margin: 0 auto;
+    padding-inline: var(--layout-padding-x);
+}
+
+.section__inner--split {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: center;
+}
+
+.section__header {
+    margin-bottom: 1.5rem;
+}
+
+.section__title {
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+}
+
+.section__subtitle {
+    font-size: 0.98rem;
+    color: var(--text-muted);
+    max-width: 40rem;
+}
+
+.section__label {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.section__list {
+    margin: 0.4rem 0 0.8rem;
+    padding-left: 1.25rem;
+    font-size: 0.95rem;
+    color: var(--text-soft);
+}
+
+.section__list--ordered {
+    list-style: decimal;
+}
+
+.section__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1rem;
+}
+
+/* ===== HERO ===== */
+
+.hero {
+    padding-block: 3.5rem 3rem;
+    background: #ffffff;
+}
+
+.hero__inner {
+    max-width: var(--layout-max-width);
+    margin: 0 auto;
+    padding-inline: var(--layout-padding-x);
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.hero__title {
+    font-size: 2rem;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+}
+
+.hero__subtitle {
+    font-size: 1rem;
+    color: var(--text-soft);
+    margin-bottom: 1rem;
+}
+
+.hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.hero__facts {
+    margin: 0;
+    padding-left: 1.25rem;
+    font-size: 0.95rem;
+    color: var(--text-soft);
+}
+
+.hero__media {
+    justify-self: center;
+}
+
+.hero__image-placeholder {
+    width: 100%;
+    min-height: 200px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #e1efff, #f5f7ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4b5563;
+    font-size: 0.9rem;
+}
+
+/* ===== КАРТОЧКИ ===== */
+
+.card {
+    background: var(--card-bg);
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    padding: 1.25rem 1.3rem;
+}
+
+.card__title {
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
+}
+
+.card__text {
+    font-size: 0.95rem;
+    color: var(--text-soft);
+    margin-bottom: 0.5rem;
+}
+
+.card__list {
+    margin: 0 0 0.6rem;
+    padding-left: 1.1rem;
+    font-size: 0.9rem;
+    color: var(--text-soft);
+}
+
+.card__link {
+    font-size: 0.9rem;
+}
+
+/* ===== БЛОК ДОВЕРИЯ / TRUST ===== */
+
+.trust-block {
+    padding: 1rem 1.1rem;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+}
+
+.trust-block__title {
+    margin: 0 0 0.45rem;
+    font-size: 1rem;
+}
+
+.trust-block__text {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-soft);
+}
+
+.trust-block__link {
+    display: inline-flex;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* ===== КОНТАКТЫ / ФОРМА ===== */
+
+.contacts {
+    display: grid;
+    gap: 0.8rem;
+    margin-top: 0.8rem;
+}
+
+.contacts__item {
+    font-size: 0.95rem;
+}
+
+.contacts__label {
+    margin: 0 0 0.1rem;
+    font-weight: 600;
+}
+
+.contacts__value {
+    margin: 0;
+    color: var(--text-soft);
+}
+
+/* Форма */
+
+.contact-form {
+    padding: 1.2rem 1.3rem;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.contact-form__title {
+    margin: 0 0 0.3rem;
+    font-size: 1.05rem;
+}
+
+.contact-form__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.contact-form__label {
+    font-weight: 500;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    font-family: inherit;
+    font-size: 0.9rem;
+    padding: 0.45rem 0.6rem;
+    border-radius: 10px;
+    border: 1px solid rgba(148, 163, 184, 0.8);
+    background: #ffffff;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.contact-form__checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.45rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.contact-form__checkbox input {
+    margin-top: 0.1rem;
+}
+
+.contact-form__submit {
+    margin-top: 0.4rem;
+    align-self: flex-start;
+}
+
+/* ===== АДАПТИВ ДЛЯ СЕКЦИЙ ===== */
+
+@media (max-width: 960px) {
+    .hero__inner,
+    .section__inner--split {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .hero__media {
+        order: -1;
+    }
+}
+
+@media (max-width: 640px) {
+    .section {
+        padding-block: 2.2rem;
+    }
+
+    .hero {
+        padding-block: 2.5rem 2rem;
+    }
+
+    .hero__title {
+        font-size: 1.6rem;
+    }
+
+    .section__title {
+        font-size: 1.4rem;
+    }
+
+    .section__actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero__actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

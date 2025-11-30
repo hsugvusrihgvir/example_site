@@ -1,1 +1,183 @@
-﻿
+﻿:root {
+    color-scheme: light;
+
+    /* Общие цвета страницы */
+    --page-bg: #f5f7fa;
+    --text-main: #1f2933;
+    --text-soft: #4b5563;
+    --text-muted: #6b7280;
+
+    /* Ссылки / акценты */
+    --link-color: #2563eb;
+    --link-hover-color: #1d4ed8;
+
+    /* Обводки, разделители, тени */
+    --border-subtle: rgba(15, 23, 42, 0.06);
+    --shadow-soft: 0 2px 6px rgba(15, 23, 42, 0.04);
+
+    /* Layout */
+    --layout-max-width: 1200px;
+    --layout-padding-x: 1.25rem;
+
+    /* Header */
+    --header-bg: #ffffff;
+    --header-border-color: var(--border-subtle);
+    --header-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    --header-shadow-mobile: 0 4px 18px rgba(0, 0, 0, 0.06);
+
+    --logo-size: 80px;
+    --logo-title-size: 1.2rem;
+    --logo-subtitle-size: 0.78rem;
+    --logo-title-color: #1c2733;
+    --logo-subtitle-color: #53606f;
+
+    --nav-gap: 1.5rem;
+    --nav-link-gap: 1rem;
+    --nav-link-font-size: 0.9rem;
+    --nav-link-color: #1f2a36;
+    --nav-link-hover-color: #2c78b5;
+    --nav-underline-start: #286095;
+    --nav-underline-end: #2b875a;
+
+    /* Footer */
+    --footer-bg: #f5f7f9;
+    --footer-border-color: rgba(0, 0, 0, 0.04);
+    --footer-text-color: #4a5563;
+    --footer-muted-color: #6b7280;
+    --footer-link-color: #1f2933;
+    --footer-link-hover-color: #2c78b5;
+    --footer-font-size: 0.85rem;
+    --footer-padding-y: 1.25rem;
+    --footer-padding-x: 1.25rem;
+
+    /* Секции / карточки */
+    --section-bg: #ffffff;
+    --section-bg-soft: #f8fafc;
+    --section-bg-accent: #e5f2ff;
+    --section-padding-y: 3rem;
+
+    --card-bg: #ffffff;
+    --card-radius: 18px;
+    --card-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+
+    /* Кнопки */
+    --btn-radius: 999px;
+    --btn-font-size: 0.9rem;
+    --btn-primary-bg: #2563eb;
+    --btn-primary-hover-bg: #1d4ed8;
+    --btn-primary-color: #ffffff;
+
+    --btn-outline-border: #2563eb;
+    --btn-outline-color: #2563eb;
+    --btn-outline-hover-bg: rgba(37, 99, 235, 0.06);
+
+    --btn-ghost-color: #1f2933;
+    --btn-ghost-hover-bg: rgba(15, 23, 42, 0.04);
+}
+
+/* ===== СБРОС / БАЗА ===== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--page-bg);
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+}
+
+p {
+    margin: 0 0 0.75rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 0 0 0.75rem;
+    font-weight: 700;
+}
+
+/* ===== КНОПКИ ===== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55rem 1.4rem;
+    border-radius: var(--btn-radius);
+    border: 1px solid transparent;
+
+    font-size: var(--btn-font-size);
+    font-weight: 500;
+    line-height: 1.2;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    transition:
+            background-color 0.18s ease,
+            color 0.18s ease,
+            border-color 0.18s ease,
+            transform 0.1s ease;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn--primary {
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-color);
+    border-color: var(--btn-primary-bg);
+}
+
+.btn--primary:hover {
+    background: var(--btn-primary-hover-bg);
+    border-color: var(--btn-primary-hover-bg);
+}
+
+.btn--outline {
+    background: transparent;
+    color: var(--btn-outline-color);
+    border-color: var(--btn-outline-border);
+}
+
+.btn--outline:hover {
+    background: var(--btn-outline-hover-bg);
+}
+
+.btn--ghost {
+    background: transparent;
+    color: var(--btn-ghost-color);
+    border-color: transparent;
+}
+
+.btn--ghost:hover {
+    background: var(--btn-ghost-hover-bg);
+}

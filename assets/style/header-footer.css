@@ -23,6 +23,18 @@
     --nav-link-hover-color: #2c78b5;
     --nav-underline-start: #286095;
     --nav-underline-end: #2b875a;
+
+
+    /* Футер */
+    --footer-bg: #f5f7f9;
+    --footer-border-color: rgba(0, 0, 0, 0.04);
+    --footer-text-color: #4a5563;
+    --footer-muted-color: #6b7280;
+    --footer-link-color: #1f2933;
+    --footer-link-hover-color: #2c78b5;
+    --footer-font-size: 0.85rem;
+    --footer-padding-y: 1.25rem;
+    --footer-padding-x: 1.25rem;
 }
 
 
@@ -232,5 +244,94 @@
         --logo-title-size: 1.1rem;
         --logo-subtitle-size: 0.8rem;
         --nav-link-font-size: 0.9rem;
+    }
+}
+
+
+/* Footer*/
+
+.site-footer {
+    background: var(--footer-bg);
+    border-top: 1px solid var(--footer-border-color);
+    font-size: var(--footer-font-size);
+    color: var(--footer-text-color);
+}
+
+.site-footer__inner {
+    max-width: var(--header-max-width);
+    margin: 0 auto;
+    padding: var(--footer-padding-y) var(--footer-padding-x);
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Левая колонка */
+
+.site-footer__title {
+    margin: 0 0 0.3rem;
+    font-weight: 700;
+    color: var(--footer-link-color);
+}
+
+.site-footer__text {
+    margin: 0;
+    color: var(--footer-muted-color);
+}
+
+/* Средняя колонка */
+
+.site-footer__nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.site-footer__nav a {
+    text-decoration: none;
+    color: var(--footer-link-color);
+    transition: color 0.15s ease;
+}
+
+.site-footer__nav a:hover {
+    color: var(--footer-link-hover-color);
+}
+
+/* Правая колонка (копирайт) */
+
+.site-footer__copy {
+    margin: 0;
+    color: var(--footer-muted-color);
+    text-align: right;
+}
+
+/* Адаптация под маленькие экраны */
+
+@media (max-width: 720px) {
+    .site-footer__inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .site-footer__copy {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-footer__inner {
+        padding-inline: 1rem;
+    }
+
+    .site-footer__title {
+        font-size: 0.95rem;
     }
 }
