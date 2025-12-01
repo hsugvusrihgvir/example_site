@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="assets/style/layout.css">
     <link rel="stylesheet" href="assets/style/header-footer.css">
     <link rel="stylesheet" href="assets/style/sections.css">
+    <link rel="stylesheet" href="assets/style/hero.css">
+    <link rel="stylesheet" href="assets/style/cards.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,7 +60,6 @@
 
 <main class="page-main">
 
-    <!-- HERO -->
     <section class="hero" id="top">
         <div class="hero__inner container">
             <div class="hero__content">
@@ -69,9 +70,9 @@
                     Полный цикл работ: от внесения СЗР и аэросева до подготовки внешних пилотов и ремонта агродронов.
                 </p>
                 <div class="hero__actions">
-                    <a href="#training" class="btn btn--primary">Записаться на обучение</a>
-                    <a href="#services" class="btn btn--outline">Заказать обработку полей</a>
-                    <a href="#repair" class="btn btn--ghost">Нужен ремонт дрона</a>
+                    <a href="#training" class="btn hero__btn">Записаться на обучение</a>
+                    <a href="#services" class="btn hero__btn">Заказать обработку полей</a>
+                    <a href="#repair" class="btn hero__btn">Нужен ремонт дрона</a>
                 </div>
                 <ul class="hero__facts">
                     <li>Практическое обучение с реальными вылетами</li>
@@ -80,24 +81,14 @@
                 </ul>
             </div>
 
-            <div class="hero__media">
-                <!-- Здесь может быть фото/коллаж дрона над полем -->
-                <div class="hero__image-placeholder">
-                    <!-- Заменишь на <img src="img/hero-drone.jpg" alt="Агродрон над полем"> -->
-                    <span>Здесь будет красивая картинка с дроном</span>
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- ТРИ НАПРАВЛЕНИЯ -->
+    <!-- Сервис -->
     <section class="section section--light">
         <div class="section__inner container">
             <header class="section__header">
                 <h2 class="section__title">Чем мы занимаемся</h2>
-                <p class="section__subtitle">
-                    Три ключевых направления работы центра.
-                </p>
             </header>
 
             <div class="grid grid--3">
@@ -143,9 +134,25 @@
         </div>
     </section>
 
-    <!-- ОБУЧЕНИЕ: ТИЗЕР -->
+    <!-- Обучение -->
     <section class="section section--accent" id="training">
         <div class="section__inner container section__inner--split">
+            <div class="section__media">
+                <div class="section__image-placeholder">
+                    <picture class="section__image">
+                        <source
+                                srcset="assets/img/photo/im1.jpg"
+                                sizes="(max-width: 960px) 100vw, 42vw">
+
+                        <img
+                                src="assets/img/photo/im1.jpg"
+                                alt="Фото обучения"
+                                loading="lazy"
+                                width="700"
+                                height="430">
+                    </picture>
+                </div>
+            </div>
             <div class="section__content">
                 <h2 class="section__title">Обучение пилотов агродронов</h2>
                 <p class="section__subtitle">
@@ -157,96 +164,104 @@
                     <li>Подготовка к получению свидетельства внешнего пилота</li>
                 </ul>
                 <div class="section__actions">
-                    <a href="/training.html" class="btn btn--primary">Подробно об обучении</a>
+                    <a href="/training.html" class="btn btn--primary">Подробно об обучении...</a>
                     <a href="#contacts" class="btn btn--outline">Задать вопрос по обучению</a>
-                </div>
-            </div>
-            <div class="section__media">
-                <div class="section__image-placeholder">
-                    <!-- Сюда фото обучения: ученики, инструктор, дрон -->
-                    <span>Фото процесса обучения пилотов</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- УСЛУГИ ПО ПОЛЯМ -->
+    <!-- обработка -->
     <section class="section" id="services">
         <div class="section__inner container section__inner--split">
             <div class="section__content">
-                <h2 class="section__title">Обработка полей и аэросев агродронами</h2>
+                <h2 class="section__title">Обработка полей, садов и виноградников агродронами</h2>
                 <p class="section__subtitle">
                     Помогаем хозяйствам внедрять технологии точного земледелия с использованием агродронов.
                 </p>
 
-                <h3 class="section__label">Что мы делаем</h3>
+                <h3 class="section__label">Преимущества</h3>
                 <ul class="section__list">
-                    <li>Внесение средств защиты растений по заданной норме</li>
-                    <li>Аэросев по заданным участкам и контурам</li>
-                    <li>Обработка полей, садов и виноградников</li>
+                    <li>Высокая эффективность. Равномерное распределение средств защиты растений обеспечивает максимальную защиту культур от вредителей и болезней</li>
+                    <li>Экономия времени и ресурсов. Беспилотные агродроны позволяют осуществлять обработку полей быстро и эффективно, сокращая затраты на топливо и ресурсы</li>
                 </ul>
 
-                <h3 class="section__label">Как проходит работа</h3>
-                <ol class="section__list section__list--ordered">
-                    <li>Вы оставляете заявку или звоните нам.</li>
-                    <li>Согласуем площадь, культуру, препараты и сроки.</li>
-                    <li>Наш экипаж выезжает с оборудованием на поле.</li>
-                    <li>Проводим обработку и передаём отчёт по выполненным работам.</li>
-                </ol>
 
                 <div class="section__actions">
                     <a href="#contacts" class="btn btn--primary">Оставить заявку</a>
-                    <a href="/services.html" class="btn btn--ghost">Подробнее об услугах</a>
+                    <a href="/services.html" class="btn btn--ghost">Подробнее...</a>
                 </div>
             </div>
             <div class="section__media">
                 <div class="section__image-placeholder">
-                    <!-- Фото дрона над полем/садом -->
-                    <span>Кадр обработки поля агродроном</span>
+                    <picture class="section__image">
+                        <source
+                                srcset="assets/img/photo/im3.jpg 700w,
+                                assets/img/photo/im3-700.jpg 1400w"
+                                sizes="(max-width: 960px) 100vw, 42vw">
+
+                        <img
+                                src="assets/img/photo/im3-700.jpg"
+                                alt="Фото обучения"
+                                loading="lazy"
+                                width="700"
+                                height="430">
+                    </picture>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- РЕМОНТ -->
+    <!-- ремонт -->
     <section class="section section--light" id="repair">
         <div class="section__inner container section__inner--split">
+            <div class="section__media">
+                <div class="section__image-placeholder">
+                    <picture class="section__image">
+                        <source
+                                srcset="assets/img/photo/im2.jpg 700w,
+                                assets/img/photo/im2-700.jpg 1400w"
+                                sizes="(max-width: 960px) 100vw, 42vw">
+
+                        <img
+                                src="assets/img/photo/im2-700.jpg"
+                                alt="Фото обучения"
+                                loading="lazy"
+                                width="700"
+                                height="430">
+                    </picture>
+                </div>
+            </div>
             <div class="section__content">
                 <h2 class="section__title">Ремонт и сервис агродронов</h2>
                 <p class="section__subtitle">
-                    Принимаем агродроны на диагностику, ремонт и обслуживание. Работаем с популярными моделями.
+                    Принимаем агродроны на диагностику, ремонт и обслуживание. Работаем с ....
                 </p>
 
                 <h3 class="section__label">Что мы ремонтируем</h3>
                 <ul class="section__list">
-                    <li>Повреждения лучей, моторов и рам</li>
-                    <li>Электроника, контроллеры и системы управления</li>
-                    <li>Аккумуляторы и элементы питания</li>
+                    <li>Пример 1</li>
+                    <li>Пример 2</li>
+                    <li>Пример 3</li>
                 </ul>
 
                 <h3 class="section__label">Как мы работаем</h3>
                 <ol class="section__list section__list--ordered">
-                    <li>Вы описываете проблему и отправляете дрон.</li>
+                    <li>Вы описываете проблему и еще чета.</li>
                     <li>Проводим диагностику и согласуем стоимость.</li>
-                    <li>Выполняем ремонт и тестирование.</li>
-                    <li>Выдаём дрон с рекомендациями по эксплуатации.</li>
+                    <li>Выполняем ремонт и что то еще делаем хз.</li>
+                    <li>И потом еще что то.</li>
                 </ol>
 
                 <div class="section__actions">
                     <a href="#contacts" class="btn btn--primary">Оставить заявку на ремонт</a>
-                    <a href="/repair.html" class="btn btn--ghost">Подробно о сервисе</a>
-                </div>
-            </div>
-            <div class="section__media">
-                <div class="section__image-placeholder">
-                    <!-- Фото мастерской / ремонт дрона -->
-                    <span>Зона ремонта и обслуживания дронов</span>
+                    <a href="/repair.html" class="btn btn--ghost">Подробно о сервисе...</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- СОЦПРОЕКТ -->
+    <!-- соц. проект -->
     <section class="section section--accent" id="project-souls">
         <div class="section__inner container section__inner--split">
             <div class="section__content">
@@ -256,9 +271,9 @@
                     которые хотят освоить профессию внешнего пилота.
                 </p>
                 <ul class="section__list">
-                    <li>Обучение с учётом индивидуальных особенностей</li>
-                    <li>Наставничество и сопровождение после обучения</li>
-                    <li>Помощь в дальнейшей профессиональной реализации</li>
+                    <li>Бесплатное очное обучение с упором на практику и работу с реальным оборудованием</li>
+                    <li>Программа, разработанная специалистами отрасли</li>
+                    <li>По окончании курса — статус сертифицированного оператора сельскохозяйственных дронов и возможность трудоустройства</li>
                 </ul>
                 <div class="section__actions">
                     <a href="https://goo.su/6s7KTp" class="btn btn--primary" target="_blank" rel="noopener">
@@ -268,14 +283,13 @@
             </div>
             <div class="section__media">
                 <div class="section__image-placeholder">
-                    <!-- Фото людей на обучении/в проекте -->
-                    <span>Участники проекта и инструкторы</span>
+                    <span>Не нашла фотку</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- КЕЙСЫ / ОПЫТ -->
+    <!-- опыт -->
     <section class="section" id="cases">
         <div class="section__inner container">
             <header class="section__header">
@@ -287,33 +301,30 @@
 
             <div class="grid grid--3">
                 <article class="card card--case">
-                    <h3 class="card__title">Обработка хозяйства на площади 500+ га</h3>
+                    <h3 class="card__title">Пример 1</h3>
                     <p class="card__text">
-                        Провели обработку полей средствами защиты растений. Снизили расход препаратов и сократили
-                        сроки работ по сравнению с традиционной техникой.
+                        ГПншрагшурамошщзвромг цутосшщсшщцвтьмо ошт игщрнин пе апнг пн7 пнгр тл
                     </p>
                 </article>
 
                 <article class="card card--case">
-                    <h3 class="card__title">Аэросев на труднодоступных участках</h3>
+                    <h3 class="card__title">Пример 2</h3>
                     <p class="card__text">
-                        Выполнили аэросев в зонах, куда сложно зайти тяжёлой техникой. Обеспечили равномерность
-                        высева и точное соблюдение границ.
+                        Пцуграг9р  78нп нр нр нпрнеапенагн шренаенпнго гшкваепнр нгршг
                     </p>
                 </article>
 
                 <article class="card card--case">
-                    <h3 class="card__title">Восстановление агродрона после падения</h3>
+                    <h3 class="card__title">Пример 3</h3>
                     <p class="card__text">
-                        Диагностировали и отремонтировали агродрон после аварии. Заменили повреждённые узлы и
-                        восстановили работоспособность оборудования.
+                        Прцвгнв нпнг н7пенпевак щгшцрошщвоцуыукванп рцгурвгшо евукейанупр шнгпуцкрнгшцущгра
                     </p>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- ДОВЕРИЕ / ДОКИ -->
+    <!-- доверие -->
     <section class="section section--light" id="trust">
         <div class="section__inner container">
             <header class="section__header">
@@ -341,7 +352,7 @@
         </div>
     </section>
 
-    <!-- КОНТАКТЫ -->
+    <!-- контакты -->
     <section class="section section--contacts" id="contacts">
         <div class="section__inner container section__inner--split">
             <div class="section__content">

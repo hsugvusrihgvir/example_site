@@ -12,7 +12,7 @@
     --logo-size: 75px;
     --logo-title-size: 1.1rem;
     --logo-subtitle-size: 0.78rem;
-    --logo-title-color: #1c2733;
+    --logo-title-color: #2482a5;
     --logo-subtitle-color: #53606f;
 
     /* Навигация */
@@ -163,7 +163,6 @@
 
 /*  Адаптация под разные ширины  */
 
-/* 1150px - слегка уменьшаем лого и заголовок */
 @media (max-width: 1150px) {
     .site-header {
         --logo-size: 60px;
@@ -181,7 +180,6 @@
     }
 }
 
-/* 860px — ещё немного уменьшаем лого и заголовок */
 @media (max-width: 860px) {
     .site-header {
         --logo-size: 50px;
@@ -190,7 +188,7 @@
 }
 
 /* Мобильная адаптация (бургер) */
-@media (max-width: 800px) {
+@media (max-width: 872px) {
     .site-header__inner {
         padding: 0.5rem 1rem;
     }
@@ -199,7 +197,7 @@
         --logo-size: 48px;
         --logo-title-size: 0.9rem;
         --logo-subtitle-size: 0.7rem;
-        --nav-link-font-size: 0.9rem;    /* меню в выезжающей панели можно оставить чуть крупнее */
+        --nav-link-font-size: 0.9rem;
     }
 
     .site-nav__toggle {
@@ -238,7 +236,7 @@
     }
 }
 
-@media (min-width: 625px) and (max-width: 800px) {
+@media (min-width: 625px) and (max-width: 872px) {
     .site-header {
         --logo-size: 60px;
         --logo-title-size: 1.1rem;
@@ -304,7 +302,6 @@
     color: var(--footer-link-hover-color);
 }
 
-/* Правая колонка (копирайт) */
 
 .site-footer__copy {
     margin: 0;

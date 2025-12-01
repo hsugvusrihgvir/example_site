@@ -63,19 +63,27 @@
     /* Кнопки */
     --btn-radius: 999px;
     --btn-font-size: 0.9rem;
-    --btn-primary-bg: #2563eb;
-    --btn-primary-hover-bg: #1d4ed8;
-    --btn-primary-color: #ffffff;
-
-    --btn-outline-border: #2563eb;
-    --btn-outline-color: #2563eb;
-    --btn-outline-hover-bg: rgba(37, 99, 235, 0.06);
-
-    --btn-ghost-color: #1f2933;
-    --btn-ghost-hover-bg: rgba(15, 23, 42, 0.04);
+    --btn-hero-bg: rgba(44, 120, 181, 0.66);
+    --btn-hero-hover-bg: rgba(30, 70, 101, 0.86);
+    --btn-hero-color: #ffffff;
 }
 
-/* ===== СБРОС / БАЗА ===== */
+:root {
+    --layout-max-width: 1200px;
+}
+
+@media (min-width: 1440px) {
+    :root {
+        --layout-max-width: 1400px;
+    }
+}
+
+@media (min-width: 1920px) {
+    :root {
+        --layout-max-width: 1600px;
+    }
+}
+
 
 *,
 *::before,
@@ -83,18 +91,22 @@
     box-sizing: border-box;
 }
 
+
 html,
 body {
     margin: 0;
     padding: 0;
 }
 
+
 body {
     font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     background: var(--page-bg);
     color: var(--text-main);
     line-height: 1.5;
+    font-size: clamp(16px, 0.9vw, 19px);
 }
+
 
 img {
     max-width: 100%;
@@ -123,7 +135,7 @@ h4 {
     font-weight: 700;
 }
 
-/* ===== КНОПКИ ===== */
+/*  КНОПКИ */
 
 .btn {
     display: inline-flex;
@@ -145,39 +157,4 @@ h4 {
             color 0.18s ease,
             border-color 0.18s ease,
             transform 0.1s ease;
-}
-
-.btn:active {
-    transform: translateY(1px);
-}
-
-.btn--primary {
-    background: var(--btn-primary-bg);
-    color: var(--btn-primary-color);
-    border-color: var(--btn-primary-bg);
-}
-
-.btn--primary:hover {
-    background: var(--btn-primary-hover-bg);
-    border-color: var(--btn-primary-hover-bg);
-}
-
-.btn--outline {
-    background: transparent;
-    color: var(--btn-outline-color);
-    border-color: var(--btn-outline-border);
-}
-
-.btn--outline:hover {
-    background: var(--btn-outline-hover-bg);
-}
-
-.btn--ghost {
-    background: transparent;
-    color: var(--btn-ghost-color);
-    border-color: transparent;
-}
-
-.btn--ghost:hover {
-    background: var(--btn-ghost-hover-bg);
 }

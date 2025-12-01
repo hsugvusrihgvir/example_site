@@ -1,4 +1,4 @@
-﻿/* ===== ОБЩИЕ СЕКЦИИ ===== */
+﻿/* ОБЩИЕ СЕКЦИИ */
 
 .section {
     padding-block: var(--section-padding-y);
@@ -35,8 +35,8 @@
 }
 
 .section__title {
-    font-size: 1.6rem;
-    margin-bottom: 0.4rem;
+    font-size: clamp(1.6rem, 2vw, 2.1rem);
+    line-height: 1.3;
 }
 
 .section__subtitle {
@@ -69,67 +69,25 @@
     margin-top: 1rem;
 }
 
-/* ===== HERO ===== */
 
-.hero {
-    padding-block: 3.5rem 3rem;
-    background: #ffffff;
+
+@media (max-width: 640px) {
+    .section {
+        padding-block: 2.2rem;
+    }
+
+
+    .section__title {
+        font-size: 1.2rem;
+    }
+
+    .section__actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }
 
-.hero__inner {
-    max-width: var(--layout-max-width);
-    margin: 0 auto;
-    padding-inline: var(--layout-padding-x);
-
-    display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-    gap: 2.5rem;
-    align-items: center;
-}
-
-.hero__title {
-    font-size: 2rem;
-    line-height: 1.25;
-    margin-bottom: 0.75rem;
-}
-
-.hero__subtitle {
-    font-size: 1rem;
-    color: var(--text-soft);
-    margin-bottom: 1rem;
-}
-
-.hero__actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-bottom: 1rem;
-}
-
-.hero__facts {
-    margin: 0;
-    padding-left: 1.25rem;
-    font-size: 0.95rem;
-    color: var(--text-soft);
-}
-
-.hero__media {
-    justify-self: center;
-}
-
-.hero__image-placeholder {
-    width: 100%;
-    min-height: 200px;
-    border-radius: 24px;
-    background: linear-gradient(135deg, #e1efff, #f5f7ff);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #4b5563;
-    font-size: 0.9rem;
-}
-
-/* ===== КАРТОЧКИ ===== */
+/* КАРТОЧКИ  */
 
 .card {
     background: var(--card-bg);
@@ -160,7 +118,6 @@
     font-size: 0.9rem;
 }
 
-/* ===== БЛОК ДОВЕРИЯ / TRUST ===== */
 
 .trust-block {
     padding: 1rem 1.1rem;
@@ -186,7 +143,7 @@
     font-size: 0.9rem;
 }
 
-/* ===== КОНТАКТЫ / ФОРМА ===== */
+/* КОНТАКТЫ*/
 
 .contacts {
     display: grid;
@@ -269,43 +226,57 @@
     align-self: flex-start;
 }
 
-/* ===== АДАПТИВ ДЛЯ СЕКЦИЙ ===== */
+.section__inner--split {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.section__media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Рамка для фото */
+.section__image-placeholder {
+    width: min(100%, 520px);
+    height: clamp(240px, 28vw, 320px);
+    border-radius: 24px;
+    overflow: hidden;
+
+    box-shadow: var(--card-shadow);
+    background: #000;
+}
+
+.section__image-placeholder img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
 
 @media (max-width: 960px) {
-    .hero__inner,
     .section__inner--split {
         grid-template-columns: minmax(0, 1fr);
+        gap: 1.8rem;
     }
 
-    .hero__media {
+    .section__media {
         order: -1;
+        margin-bottom: 0.6rem;
+    }
+
+    .section__image-placeholder {
+        width: 100%;
+        height: clamp(220px, 45vw, 280px);
+        border-radius: 20px;
     }
 }
 
 @media (max-width: 640px) {
-    .section {
-        padding-block: 2.2rem;
-    }
-
-    .hero {
-        padding-block: 2.5rem 2rem;
-    }
-
-    .hero__title {
-        font-size: 1.6rem;
-    }
-
-    .section__title {
-        font-size: 1.4rem;
-    }
-
-    .section__actions {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .hero__actions {
-        flex-direction: column;
-        align-items: stretch;
+    .section__inner--split {
+        gap: 1.4rem;
     }
 }
