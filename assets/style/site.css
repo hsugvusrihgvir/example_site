@@ -1246,6 +1246,23 @@ h4 {
     line-height: 1.55;
 }
 
+.review-card__more {
+    display: none;
+    width: fit-content;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--link-color);
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.review-card__more:hover {
+    color: var(--link-hover-color);
+}
+
 .reviews-controls {
     display: flex;
     align-items: center;
@@ -1651,8 +1668,34 @@ h4 {
     }
 
     .review-card {
-        padding: 1rem 3.15rem;
+        padding: 1rem;
         border-radius: 12px;
+    }
+
+    .reviews-viewport {
+        overflow-x: auto;
+        overflow-y: hidden;
+        border-radius: 12px;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .reviews-viewport::-webkit-scrollbar {
+        display: none;
+    }
+
+    .reviews-track {
+        gap: 0.85rem;
+        padding-inline: 0.15rem;
+        transition: none;
+        will-change: auto;
+    }
+
+    .review-card {
+        flex-basis: min(88vw, 22rem);
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
     }
 
     .reviews-controls {
@@ -1661,22 +1704,27 @@ h4 {
     }
 
     .reviews-arrow {
-        width: 2.25rem;
-        height: 2.25rem;
-        font-size: 1.25rem;
-    }
-
-    .reviews-arrow[data-reviews-prev] {
-        left: 0.45rem;
-    }
-
-    .reviews-arrow[data-reviews-next] {
-        right: 0.45rem;
+        display: none;
     }
 
     .review-card__text {
+        display: -webkit-box;
+        overflow: hidden;
         font-size: 0.9rem;
         line-height: 1.5;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 6;
+    }
+
+    .review-card__text.is-expanded {
+        display: block;
+        overflow: visible;
+        -webkit-line-clamp: unset;
+    }
+
+    .review-card__more {
+        display: inline-flex;
+        margin-top: -0.25rem;
     }
 
     .review-card__avatar {
@@ -2273,6 +2321,8 @@ body .section__image-placeholder {
 
 .card--service {
     position: relative;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
 
     border: 1px solid rgba(148, 163, 184, 0.35); /* РјСЏРіРєРёР№ РєРѕРЅС‚СѓСЂ */
@@ -2284,6 +2334,12 @@ body .section__image-placeholder {
             transform 0.18s ease,
             border-color 0.18s ease,
             background-color 0.18s ease;
+}
+
+.card--service .card__link {
+    margin-top: auto;
+    padding-top: 0.6rem;
+    align-self: flex-start;
 }
 
 /* Р¦РІРµС‚РЅР°СЏ РїРѕР»РѕСЃРєР° СЃРЅРёР·Сѓ РєР°Рє РЅР° РЅР°РІРёРіР°С†РёРё */

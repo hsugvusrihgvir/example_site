@@ -311,11 +311,33 @@
         const next = $("[data-reviews-next]", box);
         const count = $("[data-reviews-count]", box);
         const dots = $("[data-reviews-dots]", box);
+        const viewport = $(".reviews-viewport", box);
         const cards = track ? $$(".review-card", track) : [];
 
         if (!track || cards.length < 2 || !prev || !next) return;
 
         let index = 0;
+        const mobileMq = window.matchMedia("(max-width: 640px)");
+        const isMobile = () => mobileMq.matches;
+
+        cards.forEach((card) => {
+            const text = $(".review-card__text", card);
+            if (!text || text.textContent.trim().length < 220) return;
+
+            const button = document.createElement("button");
+            button.className = "review-card__more";
+            button.type = "button";
+            button.textContent = "Показать полностью";
+            button.setAttribute("aria-expanded", "false");
+
+            button.addEventListener("click", () => {
+                const expanded = text.classList.toggle("is-expanded");
+                button.textContent = expanded ? "Свернуть" : "Показать полностью";
+                button.setAttribute("aria-expanded", String(expanded));
+            });
+
+            text.after(button);
+        });
 
         const dotBtns = cards.map((_, i) => {
             const dot = document.createElement("button");
@@ -327,12 +349,9 @@
             return dot;
         });
 
-        const go = (to) => {
-            index = (to + cards.length) % cards.length;
-            track.style.transform = `translateX(${-index * 100}%)`;
-
+        const syncControls = () => {
             cards.forEach((card, i) => {
-                card.setAttribute("aria-hidden", String(i !== index));
+                card.setAttribute("aria-hidden", String(!isMobile() && i !== index));
             });
 
             dotBtns.forEach((dot, i) => {
@@ -342,8 +361,59 @@
             if (count) count.textContent = `${index + 1} / ${cards.length}`;
         };
 
+        const go = (to, smooth = true) => {
+            index = (to + cards.length) % cards.length;
+
+            if (isMobile() && viewport) {
+                track.style.transform = "";
+                viewport.scrollTo({
+                    left: cards[index].offsetLeft,
+                    behavior: smooth ? "smooth" : "auto",
+                });
+            } else {
+                track.style.transform = `translateX(${-index * 100}%)`;
+            }
+
+            syncControls();
+        };
+
         prev.addEventListener("click", () => go(index - 1));
         next.addEventListener("click", () => go(index + 1));
+
+        if (viewport) {
+            let scrollRaf = 0;
+            viewport.addEventListener(
+                "scroll",
+                () => {
+                    if (!isMobile() || scrollRaf) return;
+
+                    scrollRaf = requestAnimationFrame(() => {
+                        scrollRaf = 0;
+                        const left = viewport.scrollLeft;
+                        const nearest = cards.reduce(
+                            (best, card, i) => {
+                                const distance = Math.abs(card.offsetLeft - left);
+                                return distance < best.distance ? { i, distance } : best;
+                            },
+                            { i: index, distance: Infinity }
+                        );
+
+                        if (nearest.i !== index) {
+                            index = nearest.i;
+                            syncControls();
+                        }
+                    });
+                },
+                { passive: true }
+            );
+        }
+
+        const onModeChange = () => go(index, false);
+        if (mobileMq.addEventListener) {
+            mobileMq.addEventListener("change", onModeChange);
+        } else if (mobileMq.addListener) {
+            mobileMq.addListener(onModeChange);
+        }
 
         go(0);
     })();
